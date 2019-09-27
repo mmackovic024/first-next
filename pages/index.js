@@ -2,10 +2,10 @@ import React from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
+import LaunchesList from '../components/LaunchesList';
 import fetch from 'isomorphic-unfetch';
 
 const Home = ({ launches }) => {
-  console.log(launches);
   return (
     <div>
       <Head>
@@ -14,6 +14,15 @@ const Home = ({ launches }) => {
 
       <Header />
       <Hero />
+      <LaunchesList launches={launches} />
+      <style jsx global>{`
+        body {
+          margin: 0;
+          padding: 54px 0 0 0;
+          background-color: #f3f3f3;
+          font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif;
+        }
+      `}</style>
     </div>
   );
 };
