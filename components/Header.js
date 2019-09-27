@@ -7,6 +7,18 @@ const Header = () => (
       <h1>SpaceX launches - Next.js</h1>
     </Link>
     <style jsx>{`
+      :global(body) {
+        margin: 0;
+        padding: 54px 0 0 0;
+        background-color: #f3f3f3;
+        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif;
+      }
+
+      :global(.container) {
+        margin: 0 auto;
+        max-width: 1400px;
+      }
+
       header {
         position: fixed;
         top: 0;
