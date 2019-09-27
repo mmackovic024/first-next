@@ -4,16 +4,9 @@ import Link from 'next/link';
 const Header = () => (
   <header>
     <Link href="/">
-      <h1>First Next App</h1>
+      <h1>SpaceX launches - Next.js</h1>
     </Link>
     <style jsx>{`
-      :global(body) {
-        margin: 0;
-        padding: 0;
-        background-color: #f3f3f3;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif;
-      }
-
       header {
         position: fixed;
         top: 0;
@@ -21,7 +14,7 @@ const Header = () => (
         text-align: center;
         background-color: #ddd;
         border-bottom: 1px solid #bbb;
-        box-shadow: 1px 2px 4px lightgrey;
+        box-shadow: 1px 1px 5px grey;
       }
 
       h1 {

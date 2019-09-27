@@ -8,6 +8,8 @@ export default function Hero() {
           padding: 2rem;
           text-align: center;
           width: 70%;
+          border: 1px solid #ccc;
+          box-shadow: 1px 2px 4px lightgrey;
         }
       `}</style>
     </div>

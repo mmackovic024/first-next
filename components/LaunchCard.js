@@ -5,9 +5,11 @@ const LaunchCard = ({ launch }) => {
       <h3>Mission {launch.mission_name}</h3>
       <style jsx>{`
         .card {
-          width: 33%;
+          width: 31%;
           height: 200px;
           text-align: center;
+          border: 1px solid black;
+          margin: 5px;
         }
       `}</style>
     </div>
