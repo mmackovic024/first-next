@@ -10,9 +10,9 @@ export default function Hero() {
 
   return (
     <div className="hero">
-      <h2>Next launch</h2>
       {'flight_number' in nextL && (
         <>
+          <h2>Next launch</h2>
           <h3>#{nextL.flight_number}</h3>
           <p>Mission: {nextL.mission_name}</p>
           <p>Rocket: {nextL.rocket.rocket_name}</p>
@@ -26,9 +26,32 @@ export default function Hero() {
           padding: 1rem;
           text-align: center;
           width: 60%;
-          background-color: #ececec;
-          border: 1px solid #ccc;
-          box-shadow: 1px 2px 4px lightgrey;
+          height: 260px;
+          background-color: rgba(15, 15, 15, 0.7);
+          border-radius: 5px;
+        }
+
+        h2,
+        h3,
+        p {
+          color: rgba(255, 255, 255, 0.9);
+          animation: grow 1s;
+
+          @keyframes grow {
+            from {
+              transform: translateY(-50px);
+              opacity: 0;
+            }
+
+            to {
+              transform: translateY(0px);
+              opacity: 0.9;
+            }
+          }
+        }
+
+        p {
+          font-weight: 600;
         }
 
         @media (max-width: 1000px) {

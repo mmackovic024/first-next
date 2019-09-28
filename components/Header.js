@@ -11,7 +11,7 @@ const Header = () => (
       :global(body) {
         margin: 0;
         padding: 54px 0 0 0;
-        background-color: #f4f4f4;
+        background: #f4f4f4 url('/static/spacex.png') no-repeat fixed;
         font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif;
       }
 
@@ -27,21 +27,30 @@ const Header = () => (
         width: 100%;
         height: 55px;
         text-align: center;
-        background-color: #ddd;
-        border-bottom: 1px solid #bbb;
-        box-shadow: 1px 1px 5px grey;
+        background-color: #111;
+        box-shadow: 1px 1px 5px #444;
       }
 
       h1 {
         display: inline-block;
         cursor: pointer;
         margin: 0.5rem;
-        color: #333;
+        color: #ddd;
       }
 
       h1:hover {
-        color: #000;
-        text-shadow: 2px 2px 4px #aaa;
+        color: #fff;
+        text-shadow: 2px 2px 4px #ccc;
+      }
+
+      @media (max-width: 500px) {
+        header {
+          height: auto;
+        }
+
+        h1 {
+          font-size: 1.2rem;
+        }
       }
     `}</style>
   </header>

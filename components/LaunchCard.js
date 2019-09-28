@@ -13,7 +13,7 @@ const LaunchCard = ({ launch }) => {
           <img src={launch.links.mission_patch} alt="patch" />
           <div className="details">
             <h3>Mission: {launch.mission_name}</h3>
-            <p>Launch site: {launch.launch_site.site_name_long}</p>
+            <p>Launch site: {launch.launch_site.site_name}</p>
             <p>Launch date: {launch.launch_date_local.split('T')[0]}</p>
           </div>
         </div>
@@ -24,19 +24,20 @@ const LaunchCard = ({ launch }) => {
             height: 200px;
             margin: 5px;
             padding: 0.25rem;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            box-shadow: 1px 2px 4px lightgrey;
+            background-color: rgba(20, 20, 20, 0.8);
+            border: 1px solid #111;
+            border-radius: 5px;
           }
 
           .card:hover {
-            box-shadow: 2px 4px 6px grey;
+            border-color: #ccc;
+            background-color: rgba(20, 20, 20, 0.9);
           }
 
           .card-title {
             width: 100%;
             text-align: center;
-            border-bottom: 1px solid #ccc;
+            border-bottom: 1px solid #666;
           }
 
           .card-content {
@@ -45,6 +46,11 @@ const LaunchCard = ({ launch }) => {
             justify-content: space-between;
             align-items: center;
             margin-top: 1rem;
+          }
+
+          .card-content h3,
+          p {
+            color: #ddd;
           }
 
           img {
