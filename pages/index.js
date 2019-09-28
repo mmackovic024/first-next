@@ -25,7 +25,7 @@ const Home = ({ launches }) => {
         <LaunchesList launches={launches} />
         <style jsx>{`
           .legend {
-            width: 35%;
+            width: 60%;
             margin: 0 auto;
             padding: 0.5rem;
             background-color: rgba(10, 10, 10, 0.7);
@@ -39,15 +39,15 @@ const Home = ({ launches }) => {
             color: #bbb;
           }
 
-          @media (max-width: 1150px) {
+          @media (max-width: 1000px) {
             .legend {
-              width: 55%;
+              width: 80%;
             }
           }
 
           @media (max-width: 650px) {
             .legend {
-              width: 95%;
+              width: 90%;
             }
 
             h4 {

@@ -5,23 +5,20 @@ const LaunchCard = ({ launch }) => {
     <Link href="/launch/[id]" as={`/launch/${launch.flight_number}`}>
       <div className="card">
         <div className="card-title">
-          <h3 className={launch.launch_success ? 'success' : 'fail'}>
-            Launch #{launch.flight_number}
-          </h3>
+          <h3 className={launch.launch_success ? 'success' : 'fail'}>#{launch.flight_number}</h3>
         </div>
         <div className="card-content">
           <img src={launch.links.mission_patch} alt="patch" />
           <div className="details">
-            <h3>Mission: {launch.mission_name}</h3>
+            <h3>{launch.mission_name}</h3>
+            <p>{launch.launch_date_local.split('T')[0]}</p>
             <p>Launch site: {launch.launch_site.site_name}</p>
-            <p>Launch date: {launch.launch_date_local.split('T')[0]}</p>
           </div>
         </div>
         <style jsx>{`
           .card {
             cursor: pointer;
             width: calc((100% / 3) - 20px);
-            height: 200px;
             margin: 5px;
             padding: 0.25rem;
             background-color: rgba(20, 20, 20, 0.8);
@@ -76,7 +73,7 @@ const LaunchCard = ({ launch }) => {
           }
 
           p {
-            margin: 0.25rem;
+            margin: 0.25rem 0;
             font-size: 0.925rem;
           }
 
@@ -86,7 +83,7 @@ const LaunchCard = ({ launch }) => {
             }
 
             img {
-              width: 25%;
+              width: 28%;
             }
           }
 
@@ -96,7 +93,7 @@ const LaunchCard = ({ launch }) => {
             }
 
             img {
-              width: 20%;
+              width: 24%;
             }
           }
         `}</style>
