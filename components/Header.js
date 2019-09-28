@@ -6,6 +6,7 @@ const Header = () => (
     <Link href="/">
       <h1>SpaceX launches - Next.js</h1>
     </Link>
+
     <style jsx>{`
       :global(body) {
         margin: 0;
@@ -17,6 +18,7 @@ const Header = () => (
       :global(.container) {
         margin: 0 auto;
         max-width: 1400px;
+        text-align: center;
       }
 
       header {
@@ -33,7 +35,7 @@ const Header = () => (
       h1 {
         display: inline-block;
         cursor: pointer;
-        margin: 0.5rem 0;
+        margin: 0.5rem;
         color: #333;
       }
 

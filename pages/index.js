@@ -14,7 +14,20 @@ const Home = ({ launches }) => {
       <Header />
       <div className="container">
         <Hero />
+        <h4>
+          <span style={{ color: 'green' }}>Launch</span> success
+        </h4>
+        <h4>
+          <span style={{ color: 'red' }}>Launch</span> fail
+        </h4>
         <LaunchesList launches={launches} />
+        <style jsx>{`
+          h4 {
+            display: inline;
+            vertical-align: middle;
+            margin: 2rem;
+          }
+        `}</style>
       </div>
     </>
   );

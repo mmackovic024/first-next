@@ -9,7 +9,7 @@ const LaunchesList = ({ launches }) => {
       <style jsx>{`
         .list {
           width: 100%;
-          margin: 0 auto;
+          margin: 1rem auto;
           padding: 0;
           display: flex;
           flex-wrap: wrap;
