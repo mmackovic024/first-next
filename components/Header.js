@@ -23,6 +23,7 @@ const Header = () => (
         position: fixed;
         top: 0;
         width: 100%;
+        height: 55px;
         text-align: center;
         background-color: #ddd;
         border-bottom: 1px solid #bbb;
@@ -30,10 +31,9 @@ const Header = () => (
       }
 
       h1 {
+        display: inline-block;
         cursor: pointer;
-        margin-block-start: 0;
-        margin-block-end: 0;
-        padding: 0.5rem 0;
+        margin: 0.5rem 0;
         color: #333;
       }
 
