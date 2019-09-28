@@ -26,6 +26,7 @@ export default function Hero() {
           padding: 1rem;
           text-align: center;
           width: 60%;
+          background-color: #ececec;
           border: 1px solid #ccc;
           box-shadow: 1px 2px 4px lightgrey;
         }

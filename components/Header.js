@@ -10,7 +10,7 @@ const Header = () => (
       :global(body) {
         margin: 0;
         padding: 54px 0 0 0;
-        background-color: #f3f3f3;
+        background-color: #f4f4f4;
         font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif;
       }
 

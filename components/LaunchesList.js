@@ -8,12 +8,14 @@ const LaunchesList = ({ launches }) => {
       ))}
       <style jsx>{`
         .list {
-          width: 90%;
+          width: 100%;
           margin: 0 auto;
+          padding: 0;
           display: flex;
           flex-wrap: wrap;
           flex-direction: row;
-          justify-items: space-between;
+          justify-items: center;
+          text-align: center;
         }
       `}</style>
     </div>
