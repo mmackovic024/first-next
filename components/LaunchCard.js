@@ -68,6 +68,26 @@ const LaunchCard = ({ launch }) => {
             margin: 0.25rem;
             font-size: 0.925rem;
           }
+
+          @media (max-width: 1000px) {
+            .card {
+              width: calc(50% - 20px);
+            }
+
+            img {
+              width: 25%;
+            }
+          }
+
+          @media (max-width: 650px) {
+            .card {
+              width: calc(100% - 20px);
+            }
+
+            img {
+              width: 20%;
+            }
+          }
         `}</style>
       </div>
     </Link>

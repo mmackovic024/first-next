@@ -30,6 +30,18 @@ export default function Hero() {
           border: 1px solid #ccc;
           box-shadow: 1px 2px 4px lightgrey;
         }
+
+        @media (max-width: 1000px) {
+          .hero {
+            width: 80%;
+          }
+        }
+
+        @media (max-width: 650px) {
+          .hero {
+            width: 90%;
+          }
+        }
       `}</style>
     </div>
   );
