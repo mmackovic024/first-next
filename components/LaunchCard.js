@@ -29,6 +29,10 @@ const LaunchCard = ({ launch }) => {
             box-shadow: 1px 2px 4px lightgrey;
           }
 
+          .card:hover {
+            box-shadow: 2px 4px 6px grey;
+          }
+
           .card-title {
             width: 100%;
             text-align: center;
