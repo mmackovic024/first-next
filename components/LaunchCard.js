@@ -27,11 +27,12 @@ const LaunchCard = ({ launch }) => {
             background-color: rgba(20, 20, 20, 0.8);
             border: 1px solid #111;
             border-radius: 5px;
+            transition: background-color 0.5s;
           }
 
           .card:hover {
             border-color: #ccc;
-            background-color: rgba(20, 20, 20, 0.9);
+            background-color: rgba(20, 20, 20, 0.95);
           }
 
           .card-title {

@@ -36,6 +36,7 @@ const Header = () => (
         cursor: pointer;
         margin: 0.5rem;
         color: #ddd;
+        transition: text-shadow 0.3s;
       }
 
       h1:hover {
