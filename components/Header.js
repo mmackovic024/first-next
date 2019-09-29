@@ -17,7 +17,7 @@ const Header = () => {
           </Link>
         )}
       </div>
-      <Link href="/">
+      <Link href="/" as="/">
         <h1>SpaceX launches</h1>
       </Link>
       <div className="navBtn">
