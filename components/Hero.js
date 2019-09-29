@@ -29,6 +29,19 @@ export default function Hero() {
           height: 260px;
           background-color: rgba(15, 15, 15, 0.7);
           border-radius: 5px;
+          animation: slideIn 0.6s;
+
+          @keyframes slideIn {
+            from {
+              transform: translateX(-150px);
+              opacity: 0;
+            }
+
+            to {
+              transform: translateX(0px);
+              opacity: 100%;
+            }
+          }
         }
 
         h2,
@@ -39,13 +52,13 @@ export default function Hero() {
 
           @keyframes grow {
             from {
-              transform: translateY(-50px);
+              transform: translateY(-30px);
               opacity: 0;
             }
 
             to {
               transform: translateY(0px);
-              opacity: 0.9;
+              opacity: 100%;
             }
           }
         }
