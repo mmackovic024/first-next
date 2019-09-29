@@ -3,6 +3,7 @@ import LaunchContext from './LaunchContext';
 const LaunchPage = ({ id }) => {
   const { pending, error, launches } = React.useContext(LaunchContext);
   const launch = launches && launches.find(launch => launch.flight_number === +id);
+  const images = launch && launch.links.flickr_images.map(img => img.replace(/_o./, '_q.'));
 
   return (
     <>
@@ -24,8 +25,8 @@ const LaunchPage = ({ id }) => {
               </div>
             </section>
             <section>
-              {launch.links.flickr_images.length > 0 ? (
-                launch.links.flickr_images.map((img, i) => (
+              {images.length > 0 ? (
+                images.map((img, i) => (
                   <img key={`${launch.flight_number}${i}`} src={img} alt="launch" />
                 ))
               ) : (
@@ -97,7 +98,6 @@ const LaunchPage = ({ id }) => {
         }
 
         section:not(:last-child) > img {
-          width: 30%;
           margin: 5px;
           animation: slideRight 1s;
 
@@ -118,22 +118,33 @@ const LaunchPage = ({ id }) => {
           justify-content: center;
           align-items: center;
           flex-wrap: wrap;
-        }
+          transition: height 1s;
+          animation: fadeInFrame 2s ease-out;
 
-        section:last-child > img {
-          height: 250px;
-          margin: 5px;
-          border: 1px solid white;
-          border-radius: 5px;
-          animation: slideUp 1.2s;
-
-          @keyframes slideUp {
+          @keyframes fadeInFrame {
             from {
-              transform: translateY(150px);
+              opacity: 0;
             }
 
             to {
-              transform: translateY(0px);
+              opacity: 1;
+            }
+          }
+        }
+
+        section:last-child > img {
+          margin: 5px;
+          border: 1px solid white;
+          border-radius: 5px;
+          animation: fadeInImg 2s ease-out;
+
+          @keyframes fadeInImg {
+            from {
+              opacity: 0;
+            }
+
+            to {
+              opacity: 1;
             }
           }
         }
@@ -153,12 +164,6 @@ const LaunchPage = ({ id }) => {
 
           section:not(:last-child) > img {
             width: 40%;
-          }
-
-          section:last-child > img {
-            height: auto;
-            width: 90%;
-            margin: 5px 0;
           }
         }
       `}</style>
