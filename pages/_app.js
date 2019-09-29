@@ -32,8 +32,7 @@ export default class MyApp extends App {
         value={{
           pending: this.state.pending,
           error: this.state.error,
-          launches: this.state.launches,
-          getAll: this.getAll
+          launches: this.state.launches
         }}
       >
         <Component {...pageProps} />
