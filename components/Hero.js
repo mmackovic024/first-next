@@ -76,6 +76,7 @@ export default function Hero() {
         @media (max-width: 650px) {
           .hero {
             width: 90%;
+            height: 300px;
           }
         }
       `}</style>
