@@ -25,6 +25,19 @@ const LaunchCard = ({ launch }) => {
             border: 1px solid #111;
             border-radius: 5px;
             transition: background-color 0.5s;
+            animation: fadeIn 0.5s;
+
+            @keyframes fadeIn {
+              from {
+                opacity: 0;
+                transform: translateY(150px);
+              }
+
+              to {
+                opacity: 100%;
+                transform: translateY(0);
+              }
+            }
           }
 
           .card:hover {

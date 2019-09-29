@@ -35,7 +35,7 @@ export default function Hero() {
         h3,
         p {
           color: rgba(255, 255, 255, 0.9);
-          animation: grow 1s;
+          animation: grow 0.7s;
 
           @keyframes grow {
             from {
