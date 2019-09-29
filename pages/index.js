@@ -1,10 +1,9 @@
 import Head from 'next/head';
-import fetch from 'isomorphic-unfetch';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import LaunchesList from '../components/LaunchesList';
 
-const Home = ({ launches }) => {
+const Home = () => {
   return (
     <>
       <Head>
@@ -22,7 +21,7 @@ const Home = ({ launches }) => {
             <span style={{ color: 'red' }}>Launch</span> fail
           </h4>
         </div>
-        <LaunchesList launches={launches} />
+        <LaunchesList />
         <style jsx>{`
           .legend {
             width: 60%;
@@ -58,12 +57,6 @@ const Home = ({ launches }) => {
       </div>
     </>
   );
-};
-
-Home.getInitialProps = async () => {
-  const res = await fetch('https://api.spacexdata.com/v3/launches/past');
-  const launches = await res.json();
-  return { launches };
 };
 
 export default Home;
