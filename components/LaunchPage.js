@@ -74,6 +74,7 @@ const LaunchPage = ({ id }) => {
 
         section {
           padding: 2rem 1rem;
+          margin: 0 auto;
         }
 
         section:not(:last-child) > div {
@@ -104,7 +105,7 @@ const LaunchPage = ({ id }) => {
         }
 
         section:last-child {
-          width: 100%;
+          width: 95%;
           display: flex;
           flex-direction: row;
           justify-content: center;
@@ -117,7 +118,7 @@ const LaunchPage = ({ id }) => {
           margin: 5px;
           border: 1px solid white;
           border-radius: 5px;
-          animation: slideUp 1s;
+          animation: slideUp 1.2s;
 
           @keyframes slideUp {
             from {
