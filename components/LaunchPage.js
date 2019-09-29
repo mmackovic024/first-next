@@ -1,40 +1,44 @@
 import LaunchContext from './LaunchContext';
 
 const LaunchPage = ({ id }) => {
-  const { launches } = React.useContext(LaunchContext);
+  const { pending, error, launches } = React.useContext(LaunchContext);
   const launch = launches && launches.find(launch => launch.flight_number === +id);
 
   return (
     <>
-      {!launches && !launch && <h2>Loading ...</h2>}
-      {launches && launch && (
-        <div className="container">
-          <h1>Launch #{launch.flight_number}</h1>
-          <h2>Mission {launch.mission_name}</h2>
-          <section>
-            <img src={launch.links.mission_patch} alt="patch" />
-            <div>
-              <p>Launch date local: {launch.launch_date_local.split('T')[0]}</p>
-              <p>Launch site: {launch.launch_site.site_name_long}</p>
-              <p>Launch success: {launch.launch_success ? 'YES' : 'NO'}</p>
-              <p>Rocket: {launch.rocket.rocket_name}</p>
-              <p>{launch.details}</p>
-            </div>
-          </section>
-          <section>
-            {launch.links.flickr_images.length > 0 ? (
-              launch.links.flickr_images.map((img, i) => (
-                <img key={`${launch.flight_number}${i}`} src={img} alt="launch" />
-              ))
-            ) : (
-              <p>No images</p>
-            )}
-          </section>
-        </div>
-      )}
+      <div className="container">
+        {pending && !error && <h3>Loading ...</h3>}
+        {!pending && error && <h2>Error {error}</h2>}
+        {!pending && !error && launch && (
+          <>
+            <h1>Launch #{launch.flight_number}</h1>
+            <h2>Mission {launch.mission_name}</h2>
+            <section>
+              <img src={launch.links.mission_patch} alt="patch" />
+              <div>
+                <p>Launch date local: {launch.launch_date_local.split('T')[0]}</p>
+                <p>Launch site: {launch.launch_site.site_name_long}</p>
+                <p>Launch success: {launch.launch_success ? 'YES' : 'NO'}</p>
+                <p>Rocket: {launch.rocket.rocket_name}</p>
+                <p>{launch.details}</p>
+              </div>
+            </section>
+            <section>
+              {launch.links.flickr_images.length > 0 ? (
+                launch.links.flickr_images.map((img, i) => (
+                  <img key={`${launch.flight_number}${i}`} src={img} alt="launch" />
+                ))
+              ) : (
+                <p>No images</p>
+              )}
+            </section>
+          </>
+        )}
+      </div>
       <style jsx>{`
         h1,
         h2,
+        h3,
         p {
           color: #eee;
         }
@@ -75,6 +79,10 @@ const LaunchPage = ({ id }) => {
         section {
           padding: 2rem 1rem;
           margin: 0 auto;
+          width: 95%;
+          border-radius: 5px;
+          background-color: rgba(20, 20, 20, 0.8);
+          margin-bottom: 10px;
         }
 
         section:not(:last-child) > div {
@@ -84,7 +92,7 @@ const LaunchPage = ({ id }) => {
         section:not(:last-child) {
           display: flex;
           flex-direction: row;
-          justify-content: space-between;
+          justify-content: space-around;
           align-items: center;
         }
 
@@ -105,7 +113,6 @@ const LaunchPage = ({ id }) => {
         }
 
         section:last-child {
-          width: 95%;
           display: flex;
           flex-direction: row;
           justify-content: center;
