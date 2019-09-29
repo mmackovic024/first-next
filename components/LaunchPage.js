@@ -14,7 +14,7 @@ const LaunchPage = ({ id }) => {
             <h1>Launch #{launch.flight_number}</h1>
             <h2>Mission {launch.mission_name}</h2>
             <section>
-              <img src={launch.links.mission_patch} alt="patch" />
+              <img src={launch.links.mission_patch_small} alt="patch" />
               <div>
                 <p>Launch date local: {launch.launch_date_local.split('T')[0]}</p>
                 <p>Launch site: {launch.launch_site.site_name_long}</p>

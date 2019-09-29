@@ -8,7 +8,7 @@ const LaunchCard = ({ launch }) => {
           <h3 className={launch.launch_success ? 'success' : 'fail'}>#{launch.flight_number}</h3>
         </div>
         <div className="card-content">
-          <img src={launch.links.mission_patch} alt="patch" />
+          <img src={launch.links.mission_patch_small} alt="patch" />
           <div className="details">
             <h3>{launch.mission_name}</h3>
             <p>{launch.launch_date_local.split('T')[0]}</p>
