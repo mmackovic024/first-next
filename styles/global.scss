@@ -1,0 +1,26 @@
+@import './constants.module';
+
+:global(body) {
+  margin: 0;
+  padding: 54px 0 0 0;
+  background: $bg-img;
+  font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif;
+}
+
+:global(.container) {
+  margin: 0 auto;
+  max-width: 1400px;
+  text-align: center;
+}
+
+:global(.success) {
+  color: green;
+}
+
+:global(.fail) {
+  color: red;
+}
+
+:global(.msg) {
+  color: #fff;
+}

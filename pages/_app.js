@@ -1,6 +1,7 @@
 import React from 'react';
 import App from 'next/app';
 import LaunchContext from '../components/LaunchContext';
+import '../styles/global.scss';
 
 export default class MyApp extends App {
   constructor(props) {

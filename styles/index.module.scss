@@ -1,0 +1,32 @@
+@import './constants.module';
+
+.legend {
+  width: 60%;
+  margin: 0 auto;
+  padding: 0.5rem;
+  background-color: $bg-trans-primary;
+  border-radius: 3px;
+
+  h4 {
+    display: inline;
+    vertical-align: middle;
+    margin: 2rem;
+    color: $txt-primary;
+  }
+}
+
+@media (max-width: $lg) {
+  .legend {
+    width: 80%;
+  }
+}
+
+@media (max-width: $sm) {
+  .legend {
+    width: 90%;
+
+    h4 {
+      margin: 2rem 0.5rem;
+    }
+  }
+}
