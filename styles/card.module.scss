@@ -45,15 +45,15 @@
     p {
       color: $txt-primary;
     }
-  }
 
-  img {
-    width: 30%;
-  }
+    img {
+      width: 30%;
+    }
 
-  .details {
-    width: 65%;
-    text-align: left;
+    .details {
+      width: 65%;
+      text-align: left;
+    }
   }
 
   h3 {
@@ -69,19 +69,23 @@
 @media (max-width: $lg) {
   .card {
     width: calc(50% - 20px);
-  }
 
-  img {
-    width: 28%;
+    .cardContent {
+      img {
+        width: 28%;
+      }
+    }
   }
 }
 
 @media (max-width: $sm) {
   .card {
     width: calc(100% - 20px);
-  }
 
-  img {
-    width: 24%;
+    .cardContent {
+      img {
+        width: 24%;
+      }
+    }
   }
 }
