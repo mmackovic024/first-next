@@ -1,17 +1,12 @@
 import Head from 'next/head';
-import fetch from 'isomorphic-unfetch';
+import LaunchContext from '../components/LaunchContext';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import LaunchesList from '../components/LaunchesList';
 import styles from '../styles/index.module.scss';
-// import LaunchContext from '../components/LaunchContext';
 
-const Home = ({ data }) => {
-  // const { launches, setLaunches } = React.useContext(LaunchContext);
-  // React.useEffect(() => {
-  //   if (launches.length === 0) setLaunches({ launches: data });
-  // }, [data]);
-  const launches = data;
+const Home = () => {
+  const { launches, error } = React.useContext(LaunchContext);
 
   return (
     <>
@@ -30,18 +25,11 @@ const Home = ({ data }) => {
             <span className="fail">Launch</span> fail
           </h4>
         </div>
-        {launches.error && <h1 className="msg">{launches.error}</h1>}
-        {/* {!launches.error && <LaunchesList launches={launches.length > 0 ? launches : data} />} */}
-        {!launches.error && <LaunchesList launches={launches} />}
+        {error && <h1 className="msg">{error}</h1>}
+        {!error && launches && <LaunchesList launches={launches} />}
       </div>
     </>
   );
-};
-
-Home.getInitialProps = async ({ req }) => {
-  const response = await fetch('https://api.spacexdata.com/v3/launches/past');
-  const data = await response.json();
-  return { data };
 };
 
 export default Home;

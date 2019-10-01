@@ -1,20 +1,14 @@
 import Head from 'next/head';
-import fetch from 'isomorphic-unfetch';
 import { useRouter } from 'next/router';
-// import LaunchContext from '../../components/LaunchContext';
+import LaunchContext from '../../components/LaunchContext';
 import Header from '../../components/Header';
 import LaunchPage from '../../components/LaunchPage';
 
-const Details = ({ launch }) => {
+const Details = () => {
   const router = useRouter();
   const { id } = router.query;
-  // const { launches } = React.useContext(LaunchContext);
-  // let currLaunch = {};
-  // if (launches.length === 0) {
-  //   currLaunch = launch;
-  // } else {
-  //   currLaunch = launches.length > 0 && launches.find(launch => launch.flight_number === +id);
-  // }
+  const { launches, error } = React.useContext(LaunchContext);
+  const currLaunch = launches && launches.find(launch => launch.flight_number === +id);
 
   return (
     <>
@@ -22,15 +16,10 @@ const Details = ({ launch }) => {
         <title>SpaceX - launch #{id}</title>
       </Head>
       <Header />
-      <LaunchPage launch={launch} />
+      {error && <h1 className="msg">{error}</h1>}
+      {!error && currLaunch && <LaunchPage launch={currLaunch} />}
     </>
   );
-};
-
-Details.getInitialProps = async ({ req, query }) => {
-  const response = await fetch(`https://api.spacexdata.com/v3/launches/${query.id}`);
-  const launch = await response.json();
-  return { launch };
 };
 
 export default Details;
