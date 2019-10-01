@@ -1,13 +1,23 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import LaunchContext from './LaunchContext';
+import fetch from 'isomorphic-unfetch';
+// import LaunchContext from './LaunchContext';
 import styles from '../styles/header.module.scss';
 
 const Header = () => {
-  const { launches } = React.useContext(LaunchContext);
+  // const { launches } = React.useContext(LaunchContext);
+  const [isNext, setNext] = React.useState(false);
   const router = useRouter();
   const { id } = router.query;
+
+  React.useEffect(() => {
+    if (router.route !== '/') {
+      fetch(`https://api.spacexdata.com/v3/launches/${+id + 1}`)
+        .then(res => res.json())
+        .then(launch => setNext(!launch.upcoming));
+    }
+  }, [id]);
 
   return (
     <header className={styles.header}>
@@ -22,7 +32,7 @@ const Header = () => {
         <h1>SpaceX launches</h1>
       </Link>
       <div className={styles.navBtn}>
-        {+id + 1 <= launches.length && (
+        {isNext && router.route !== '/' && (
           <Link href="/launch/[id]" as={`/launch/${+id + 1}`}>
             <h1>#{+id + 1} ˃</h1>
           </Link>

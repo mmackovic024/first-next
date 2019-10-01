@@ -1,4 +1,5 @@
 import styles from '../styles/hero.module.scss';
+import fetch from 'isomorphic-unfetch';
 
 export default function Hero() {
   const [nextL, setNextL] = React.useState({});

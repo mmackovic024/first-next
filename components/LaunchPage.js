@@ -1,17 +1,17 @@
-import LaunchContext from './LaunchContext';
+// import LaunchContext from './LaunchContext';
 import styles from '../styles/page.module.scss';
 
-const LaunchPage = ({ id }) => {
-  const { pending, error, launches } = React.useContext(LaunchContext);
-  const launch = launches && launches.find(launch => launch.flight_number === +id);
+const LaunchPage = ({ launch }) => {
+  // const { pending, error, launches } = React.useContext(LaunchContext);
+  // const launch = launches && launches.find(launch => launch.flight_number === +id);
   const images = launch && launch.links.flickr_images.map(img => img.replace(/_o./, '_q.'));
 
   return (
     <>
       <div className="container">
-        {pending && !error && <h3 className="msg">Loading ...</h3>}
-        {!pending && error && <h2 className="msg">Error {error}</h2>}
-        {!pending && !error && launch && (
+        {/* {pending && !error && <h3 className="msg">Loading ...</h3>}
+        {!pending && error && <h2 className="msg">Error {error}</h2>} */}
+        {launch && (
           <div className={styles.content}>
             <h1>Launch #{launch.flight_number}</h1>
             <h2>Mission {launch.mission_name}</h2>
@@ -36,6 +36,7 @@ const LaunchPage = ({ id }) => {
             </section>
           </div>
         )}
+        {!launch && <h2 className="msg">Error {error}</h2>}
       </div>
     </>
   );
