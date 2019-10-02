@@ -12,8 +12,9 @@ const LaunchCard = ({ launch }) => {
           <img src={launch.links.mission_patch_small} alt="patch" />
           <div className={styles.details}>
             <h3>{launch.mission_name}</h3>
+            <p>{launch.rocket.rocket_name}</p>
+            <p>{launch.launch_site.site_name_long}</p>
             <p>{launch.launch_date_local.split('T')[0]}</p>
-            <p>Launch site: {launch.launch_site.site_name}</p>
           </div>
         </div>
       </div>

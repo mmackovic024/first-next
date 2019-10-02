@@ -8,16 +8,16 @@
   height: 260px;
   background-color: $bg-trans-primary;
   border-radius: 5px;
-  animation: slideIn 0.6s;
+  animation: slideIn 0.8s ease-out;
 
   @keyframes slideIn {
     from {
-      transform: translateX(-150px);
+      transform: translateY(-150px);
       opacity: 0;
     }
 
     to {
-      transform: translateX(0px);
+      transform: translateY(0px);
       opacity: 100%;
     }
   }
@@ -26,19 +26,6 @@
   h3,
   p {
     color: $txt-primary;
-    animation: grow 0.7s;
-
-    @keyframes grow {
-      from {
-        transform: translateY(-30px);
-        opacity: 0;
-      }
-
-      to {
-        transform: translateY(0px);
-        opacity: 100%;
-      }
-    }
   }
 
   p {
